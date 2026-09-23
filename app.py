@@ -48,7 +48,6 @@ def home():
 
 # Run the application if this file is executed directly
 if __name__ == '__main__':
-    # debug=True: Enables auto-reload and detailed error messages
-    # host='127.0.0.1': Only accessible from your computer
-    # port=5000: The port number for the web server
-    app.run(debug=True, host='127.0.0.1', port=5000)
+    # host='0.0.0.0': Accept connections from outside the container
+    # port=5000: The port published by the Jenkins Docker run stage
+    app.run(host='0.0.0.0', port=5000)
